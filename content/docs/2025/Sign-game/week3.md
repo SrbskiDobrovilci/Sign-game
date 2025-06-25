@@ -10,25 +10,101 @@ Week \#3
 
 * Interactive board of ideas: [Miro](https://miro.com/welcomeonboard/NjllanVudnhUd2Fhd3RGQUpCMlN0S3d2Nm9SakkrNzI1YVhsK0VKYmZpQkR6Titjc2xycjRyNnpYRTNGRTlvNyt5anpZa3R4TkZVUEdwNjIwdDVTcjdqQksyeUJBbTcreDg3cXNHWllsZFk2VWlhSHRvTTJ2aU5uU3BuR2hvRG5NakdSWkpBejJWRjJhRnhhb1UwcS9BPT0hdjE=?share_link_id=131423753479)
 
-* MVP demo preview: [Demo]()
-
-* MVP release: [Release]()
-
 This week we developed the MVP of our project, making the main functionality of our future game.
 
-### Team members and tracks
+### Implemented MVP features
 
-| Team Member |  Email Address | Track | 
-| :----  | :---- | :---- |
-| Sviatoslav Fediaev *(Lead)*  | [s.fediaev@innopolis.university](mailto:s.fediaev@innopolis.university) | Unity developer | 
-| Valeriia Kolesnikova  | [v.kolesnikova@innopolis.university](mailto:v.kolesnikova@innopolis.university) | Unity developer | 
-| Fanis Zinnurov  | [f.zinnurov@innopolis.university](mailto:f.zinnurov@innopolis.university) | Unity developer | 
-| Egor Savchenko  | [e.savchenko@innopolis.university](mailto:e.savchenko@innopolis.university) | Unity developer | 
-| Danil Valiev  | [d.valiev@innopolis.university](mailto:d.valiev@innopolis.university) | Project Manager<br>DevOps| 
-| Nikita Stepankov  | [n.stepankov@innopolis.university](mailto:n.stepankov@innopolis.university) | Machine Learning | 
-| Stanislav Delyukov  | [s.delyukov@innopolis.university](mailto:s.delyukov@innopolis.university) | UX/UI<br>Design | 
+* Built the main gameplay scene in Unity2D with core character movement and basic animations
 
-## Project specific progress
+* Designed and added UI and character sprites
+
+* Configured colliders and in-scene navigation
+
+* Integrated ML model into Unity2D to recognize signs
+
+* Added area of economic strategy with items in the store 
+
+In general, a finished MVP fragment was created in a week: the user can launch the game, go through the first scene, interact with objects and use jamming to move on.
+
+### Full user journey
+
+0. Launch the game
+
+1. Click "Start game" button
+
+2. Player enters the first location — the cave
+
+3. Interact with objects (enemies, coins, store)
+
+4. User is prompted to draw a symbol
+
+5. ML model performs symbol recognition
+
+6. Sign accuracy deals damage, using it, defeat all enemies
+
+7. Progress to the next location
+
+### Demonstration of the Working MVP
+
+You can view the demo and screenshots [here](https://drive.google.com/file/d/1gOAShk36HPOXfU-XGOHnhAzwJOA_3oHy/view?usp=sharing)
+
+### ML
+
+We fully developed, trained and integrated ML model
+
+- Training code source: [code](https://github.com/IU-Capstone-Project-2025/SignGame/blob/main/static_ml/model.py)
+
+- Initial model artifacts: [artifacts](https://github.com/IU-Capstone-Project-2025/SignGame/blob/main/static_ml/test_dataset_generation.ipynb)
+
+- Trained model: [ONNX model](https://github.com/IU-Capstone-Project-2025/SignGame/blob/main/static_ml/CNNModelC%23/CNN_model.onnx)
+
+*We also have a [model documentation](https://github.com/IU-Capstone-Project-2025/SignGame/blob/main/static_ml/doc.md), where described how we trained your model, what data used and what parameters model uses to make decisions*
+
+## Internal demo
+
+During testing we identified the following issues:
+
+* No clear instruction on what symbol to draw
+
+* Sometimes a dash works incorrectly
+
+* Sometimes the hero's spells are applied too slowly and are canceled when pressed again
+
+* There is no accurate recipe for the spell, it is not known what to mix with
+
+* There is no explanation of the game process lore
+
+Then we discussed the priority of this ideas
+
+### Priority tasks
+
+This tasks will completed during next week
+
+* Diversify the game with a second location and add a connection between the initial one
+  
+* Develop a level boss
+  
+* Impose visual effects on spells
+
+* Adding traps to current and future levels
+
+* Store design and full functionality
+
+### Need to be discussed
+
+This problems will fixed during next week
+
+* Fix hero abilities work
+
+* Fix spell cast- and tick rate
+
+### Need to be done later 
+
+This conflicts need to be resolved, but for now it is not prioriry target
+
+* Optimize current game process
+
+* Update some beta applied textures or models
 
 ### Core Feature Implementation
 
@@ -36,15 +112,7 @@ This week we developed the MVP of our project, making the main functionality of 
 
 2. Design textures and/or animations were issued on all the necessary models
 
-3. Fully developed, trained and integrated ML model
-
-- Training code source: [code](https://github.com/IU-Capstone-Project-2025/SignGame/blob/main/static_ml/model.py)
-
-- Initial model artifacts: [artifacts](https://github.com/IU-Capstone-Project-2025/SignGame/blob/main/static_ml/test_dataset_generation.ipynb)
-
-- Trained model: [model](https://github.com/IU-Capstone-Project-2025/SignGame/blob/main/static_ml/CNNModelC%23/CNN_model.onnx)
-
-*We also have a [model documentation](https://github.com/IU-Capstone-Project-2025/SignGame/blob/main/static_ml/doc.md), where described how we trained your model, what data used and what parameters model uses to make decisions*
+3. Integrated ML model
 
 4. All work merged in the [main branch](https://github.com/IU-Capstone-Project-2025/SignGame)
 
@@ -148,18 +216,23 @@ Stanislav Delyukov:
 
 * Dash [effect](https://github.com/IU-Capstone-Project-2025/SignGame/commit/9554e9ad7689ff3a1e4ffe88ca94c3b031f2cb0c) 
 
-### Plan for Week #4
+## Plan for the Week #4
 
-1. Diversify the game with a second location and add a connection between the initial one
-  
-2. Develop a range enemy and level boss
-  
-3. Optimize current game progress
-  
-4. Impose visual effects on spells
+The most important to us is to complete the main game features, then to move on to progression
 
-5. Adding traps to current and future levels
+* MVP bug fix
 
-6. Store design and full functionality
+* Achievement system logic - separate menu of special achievements obtained in different ways
 
-Innopolis University | Capstone project | Summer 2025
+* Traps in any existing level
+
+* Level boss with a special room 
+
+## Confirmation of the code's operability
+
+We confirm that the code in the main branch:
+
+* [✓] In working condition.
+* [✓] Run via docker-compose (or another alternative described in the README.md).
+
+*Innopolis University    |   Capstone project    |   Summer 2025*
